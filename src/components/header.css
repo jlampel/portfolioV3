@@ -1,0 +1,79 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    display: grid;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.8);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.social a, .social a:visited {
+    color: rgba(255, 255, 255, .5);
+
+}
+.social a:hover {
+    color: white;
+}
+
+@media only screen and (min-width: 600px) {
+    .header {
+        height: 64px;
+        grid-template-columns: auto auto;
+        grid-template-rows: 100%;
+    }
+
+    .headerBackground {
+        height: 64px;
+        width: 100%;
+        background-image: url("media/gradient.jpg");
+        background-repeat: no-repeat;
+        background-position: center top; 
+        background-size: 100%;
+        position: relative;
+    }
+
+    .title {
+        padding-left: 32px;
+        margin-top: 0px;
+        padding-top: 8px;
+    }
+
+    .social {
+        font-size: 18px;
+        text-align: right;
+        padding-right: 32px;
+        padding-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h3 {
+        font-size: 16px;
+    }
+
+    .header {
+        text-align: center;
+        height: 96px;
+    }
+
+    .headerBackground {
+        height: 96px;
+        width: 100%;
+        background-image: url("media/gradient.jpg");
+        background-repeat: no-repeat;
+        background-position: center top; 
+        background-size: 100%;
+    }
+
+    .title {
+        margin-top: 8px;
+        margin-bottom: 0px;
+    }
+    
+    .social {
+        font-size: 18px;
+        margin-top: -4px;
+    }
+
+}
