@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import './App.css';
 import { Header } from './components/header';
-import { Gallery, Modal, projects } from './components/gallery';
+import { Footer } from './components/footer';
+import { Gallery } from './components/gallery';
+import { Modal } from './components/modal';
 
 class App extends Component {
   constructor(props) {
@@ -12,30 +14,48 @@ class App extends Component {
       activeProject: null,
     }
     this.changeProject = this.changeProject.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
   changeProject(project) {
     this.setState({ activeProject: project });
   }
   toggleModal() {
     if (this.state.isModal) {
-      this.setState({ isModal: true })
+      this.setState({ isModal: false });
+      enableBodyScroll(document.querySelector('modal'));
     } else {
-      this.setState({ isModal: false })
+      disableBodyScroll(document.querySelector('modal'));
+      this.setState({ isModal: true });
     }
   }
   render() {
     if (this.state.isModal) {
       return (
         <div className="App" id='app'>
-            <Modal project={this.state.activeProject} onClick={this.toggleModal}/>
-            <Gallery />
+          <Header />
+          <Modal id='modal'
+            activeProject={this.state.activeProject} 
+            toggleModal={this.toggleModal}
+            changeProject={this.changeProject}
+          />
+          <Gallery 
+            activeProject={this.state.activeProject} 
+            changeProject={this.changeProject} 
+            toggleModal={this.toggleModal}
+          />
+          <Footer />
         </div>
       );
     } else {
       return (
         <div className="App" id='app'>
-            <Header />
-            <Gallery />
+          <Header />
+          <Gallery 
+            activeProject={this.state.activeProject} 
+            changeProject={this.changeProject} 
+            toggleModal={this.toggleModal}
+          />
+          <Footer />
         </div>
       );
     }

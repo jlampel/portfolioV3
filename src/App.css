@@ -4,6 +4,8 @@ body {
   padding-top: 0px;
   padding-bottom: 0px;
   background-color: rgb(35,38,43);
+  width:100vw;
+  overflow-x:hidden;
 }
 
 h1 {
@@ -35,4 +37,7 @@ a {
 }
 a:hover {
   color: white;
+}
+::-webkit-scrollbar { 
+  display: none; 
 }

@@ -1,34 +1,34 @@
 import React, { Component } from 'react';
 import './gallery.css';
+import { Modal } from './modal';
+import {About} from './about';
 
 export const projects = {
     plants: {
         title: "Forgotten Temple Statue",
-        text: 'This is a description of the project',
-        src: [
-            require('./media/Plants_feature.png'), 
-            require('./media/Plants_clay.png')
+        text: 'An outdoor jungle scene created as an example of how to model, texture, and place plants using Blender.',
+        src: [require('./media/Plants_feature.png'), require('./media/Plants_clay.png')
         ]
     },
     bulldozer: {
         title: 'Building Something New',
-        text: '',
-        src: [require('./media/bulldozer.jpg')],
+        text: 'Every season the Blender Market has a sale, and my task is to create a render using only Market assets. This one was black Friday / cyber Monday 2018, with the theme of being constructive!',
+        src: [require('./media/bulldozer.jpg'), require('./media/bulldozer_clay.jpg')],
     },
     soldier: {
         title: "Tomorrow's Enforcer",
-        text: '',
-        src: [require('./media/SciFiSoldier.jpg')],
+        text: 'A sci-fi soldier in action, created for 3D Artist Magazine issue 96.',
+        src: [require('./media/SciFiSoldier.jpg'), require('./media/soldier_rigged.jpg'), require('./media/soldier_turnaround.jpg'), require('./media/soldier_wires.jpg')],
     },
     cabin: {
         title: "Cabin in the Woods",
-        text: '',
+        text: 'An environment created for a photorealism contest, inspired by adventures in the Pacific Northwest. This image was later used as a book cover for the mystery novel Harlen McFadden.',
         src: [require('./media/cabin.jpg')],
     },
     feast: {
         title: "King of the Feast",
-        text: '',
-        src: [require('./media/market.jpg')],
+        text: 'This render was created for the Blender Market spring sale 2018 event, and is composed of only market products. Since the modeling and texturing was provided, my focus was on lighting, composition, and storytelling.',
+        src: [require('./media/market.jpg'), require('./media/market_square.jpg')],
     },
     vonnbots: {
         title: "VonnBots on Vacation",
@@ -53,7 +53,7 @@ export const projects = {
     revolver: {
         title: "VR Ready Colt Walker Revolver",
         text: '',
-        src: [require('./media/revolver.jpg')],
+        src: [require('./media/revolver.jpg'), "https://sketchfab.com/models/78e398909703453e9c8b1f990493e00a/embed?"],
     },
     rocketLauncher: {
         title: "Sci-Fi FPS Rocket Launcher",
@@ -63,31 +63,37 @@ export const projects = {
     sniper: {
         title: "Transforming Sci-Fi FPS Sniper Rifle",
         text: '',
-        src: [require('./media/sniper.jpg')],
+        src: [require('./media/sniper.jpg'), "https://sketchfab.com/models/821c903965374b9bbda49a86b347debc/embed?"],
     },
     coffee: {
         title: "Coffee Time",
         text: '',
         src: [require('./media/coffee.jpg')],
     },
+    tanks: {
+        title: 'Mini Tanks for a Mobile Game',
+        text: "These tanks were created for the CG Cookie mini game Tank Ball. Modeled in Blender and textured in Substance Painter. At just over 1,300 triangles, it will run smoothly on any game platform - even VR! The PBR textures are 1K to keep memory low, and the albedo textures can safely be used with a mobile shader as well. The gears and treads are also animated via driven UV's.",
+        src: [require('./media/tanks.jpg'), require('./media/tank_topology.jpg'), "https://sketchfab.com/models/f42ae02f2ea84099ac6d03020c1794e5/embed?"],
+    },
+    gyrocopter : {
+        title: 'Sci-fi Gyrocopter',
+        text: "This game-ready two person transport is the perfect vehicle for any sci-fi environment. At just over 44k triangles and textured at 4k resolution, it strikes the balance between detail and performance. This project is a retopologized and retextured update to a high poly model by Jonathan Williamson, concepted by David Revoy. ",
+        src: [require('./media/gyrocopter.jpg'), "https://sketchfab.com/models/34a72c75fe4745d2bbaa1784ef8e243d/embed?"]
+    }
 }
 
 class ProjectImage extends Component {
     constructor(props) {
         super(props);
         this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
         this.state = {
             src: projects[this.props.src].src[0],
             content: projects[this.props.src],
-            modal: false,
         }
     }
     openModal() {
-        this.setState({modal: true});
-    }
-    closeModal() {
-        this.setState({modal: false});
+        this.props.changeProject(this.state.content);
+        this.props.toggleModal();
     }
     render() {
         if (!this.state.modal) {
@@ -107,80 +113,37 @@ class ProjectImage extends Component {
     }
 }
 
-export class Modal extends React.Component {
+export class Gallery extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            display: this.props.display,
-            project: this.props.project,
-        };
-        this.closeModal = this.closeModal.bind(this);
+        this.changeProject = this.changeProject.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
     }
-    closeModal() {
-        this.setState({display: false});
+    changeProject(project) {
+        this.props.changeProject(project);
     }
-    render() {
-        if (this.state.display) {
-            return (
-                <div class="modal" onClick={this.closeModal} >
-                    <div class="modal-body">
-                        <div class="modal-header"> 
-                            <h2 class="modal-title">{this.state.project.title}</h2>
-                            <button onClick={this.closeModal} type="button" class="close">&times;</button>
-                        </div>
-                        <p>{this.state.project.text}</p>
-                        <img src={this.state.project.src[0]} alt={this.state.project.title}/>
-                        <img src={this.state.project.src[1]} alt={this.state.project.title}/>
-                        <img src={this.state.project.src[2]} alt={this.state.project.title}/>
-                        <img src={this.state.project.src[2]} alt={this.state.project.title}/>
-                    </div>
-                </div>
-            );
-        } else {
-            return ( null );
-        }
+    toggleModal() {
+        this.props.toggleModal();
     }
-}
-
-class About extends Component {
-    render() {
-        return (
-
-            <div class="about">
-                <img class={"about-image"} src={require('./media/profile.jpg')} alt="Jonathan's attractive face" />
-                <div class="about-text">
-                    <h3>Hi, I’m Jonathan Lampel, a Computer Graphics artist in Seattle. </h3>
-                    <p>I’m currently working as a 3d modeling instructor and designer for <a href="https://cgcookie.com" target="blank">CG Cookie</a>. 
-                        I'm an occasional design professor at Lake Washington Institute of Technology, a first place Autodesk CG Student Awards winner, an Eagle Scout, 
-                        and have been featured in three issues of 3D Artist magazine. 
-                        Results from my tutorials can be seen in <a href="https://youtu.be/exAwxzhBL8w?t=1125" target="blank">Westworld</a>, 
-                        Marvel's The Gifted, and more.</p>
-                    <p>Outside the studio I’m a big fan of exploring nature, reading, fitness, 
-                        and constantly drinking tea.</p>
-                </div>  
-            </div>
-        );
-    }
-}
-
-export class Gallery extends Component {
     render() {
         return (
             <div class="gallery">
-                <ProjectImage class="large" src='plants'/>
-                <ProjectImage src='bulldozer'/> 
-                <ProjectImage src='soldier'/> 
+                <ProjectImage class="large" src='plants'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
+                <ProjectImage src='bulldozer'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage src='soldier'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 <About />
-                <ProjectImage src='cabin'/> 
-                <ProjectImage class="large"src='feast'/>  
-                <ProjectImage src='vonnbots'/>
-                <ProjectImage class="tall"src='dragon'/> 
-                <ProjectImage src='snowman'/> 
-                <ProjectImage src='readingRoom'/> 
-                <ProjectImage src='revolver'/> 
-                <ProjectImage src='rocketLauncher'/> 
-                <ProjectImage src='sniper'/> 
-                <ProjectImage src='coffee'/> 
+                <ProjectImage src='cabin'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage class="large"src='feast'changeProject={this.changeProject} toggleModal={this.toggleModal}/>  
+                <ProjectImage src='vonnbots'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
+                <ProjectImage class="tall"src='dragon'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage src='snowman'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage src='readingRoom'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage src='revolver'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage src='rocketLauncher'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage src='sniper'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage src='coffee'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage src='tanks'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage src='gyrocopter'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
             </div>
         );
     }
