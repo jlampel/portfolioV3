@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './gallery.css';
-import { Modal } from './modal';
+import LazyLoad from 'react-lazy-load';
 import {About} from './about';
 
 export const projects = {
@@ -122,8 +122,10 @@ class ProjectImage extends Component {
     }
     render() {
         return (
-            <div onClick={this.openModal} class={this.props.class} id="imageContainer" >     
-                <img src={this.state.src} alt={this.state.content.title} class="image"/>
+            <div onClick={this.openModal} class={this.props.class} id="imageContainer" > 
+                <LazyLoad offset='720'>  
+                    <img src={this.state.src} alt={this.state.content.title} class="image"/>
+                </LazyLoad>  
             </div>
         );
     }
