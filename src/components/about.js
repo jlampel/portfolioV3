@@ -12,8 +12,7 @@ export class About extends Component {
                     <p>I’m currently working as a 3d modeling instructor for <a href="https://cgcookie.com" target="blank">CG Cookie</a>. 
                         I'm an occasional UX design professor at <a href='https://www.lwtech.edu/' target='blank'>LWIT</a>, a first place Autodesk CG Student Awards winner, an Eagle Scout, 
                         and have been featured in three issues of 3D Artist magazine. 
-                        Results from my tutorials can be seen in <a href="https://youtu.be/exAwxzhBL8w?t=1125" target="blank">Westworld</a>, 
-                        Marvel's The Gifted, and more.</p>
+                        </p>
                     <p>Outside the studio I’m a big fan of exploring nature, reading, fitness, 
                         and constantly drinking tea.</p>
                 </div>  

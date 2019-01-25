@@ -123,7 +123,7 @@ class ProjectImage extends Component {
     render() {
         return (
             <div onClick={this.openModal} class={this.props.class} id="imageContainer" > 
-                <LazyLoad offset='720'>  
+                <LazyLoad>  
                     <img src={this.state.src} alt={this.state.content.title} class="image"/>
                 </LazyLoad>  
             </div>
