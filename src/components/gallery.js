@@ -123,9 +123,7 @@ class ProjectImage extends Component {
     render() {
         return (
             <div onClick={this.openModal} class={this.props.class} id="imageContainer" > 
-                <LazyLoad>  
                     <img src={this.state.src} alt={this.state.content.title} class="image"/>
-                </LazyLoad>  
             </div>
         );
     }
@@ -149,23 +147,43 @@ export class Gallery extends Component {
                 <ProjectImage class="large" src='plants'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
                 <ProjectImage src='bulldozer'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 <ProjectImage src='soldier'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+
                 <About />
+
                 <ProjectImage src='cabin'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 <ProjectImage class="large"src='feast'changeProject={this.changeProject} toggleModal={this.toggleModal}/>  
                 <ProjectImage src='vonnbots'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
+
                 <ProjectImage class="tall"src='dragon'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 <ProjectImage src='snowman'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <ProjectImage src='readingRoom'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <LazyLoad offset='1000'>
+                    <ProjectImage src='readingRoom'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                </LazyLoad>
                 <ProjectImage class='large' src='rocketLauncher'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
+
                 <ProjectImage class='large' src='mountain'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <ProjectImage src='revolver'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <ProjectImage src='sniper'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <ProjectImage src='coffee'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <ProjectImage class='large' src='tanks'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <ProjectImage src='gyrocopter'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <LazyLoad offset='1000'>
+                    <ProjectImage src='revolver'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                </LazyLoad>
+                <LazyLoad offset='1000'>
+                    <ProjectImage src='sniper'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                </LazyLoad>
+                
+                <LazyLoad>
+                    <ProjectImage src='coffee'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                </LazyLoad>
+                    <ProjectImage class='large' src='tanks'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <LazyLoad>
+                    <ProjectImage src='gyrocopter'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                </LazyLoad>
+
                 <ProjectImage class='large' src='templetonTonics'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <ProjectImage src='ax'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <ProjectImage src='freedom'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <LazyLoad>
+                    <ProjectImage src='ax'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                </LazyLoad>
+                <LazyLoad>
+                    <ProjectImage src='freedom'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                </LazyLoad>
             </div>
         );
     }
