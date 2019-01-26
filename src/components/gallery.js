@@ -7,7 +7,7 @@ export const projects = {
     plants: {
         title: "Forgotten Temple Statue",
         text: 'An outdoor jungle scene created as an example of how to model, texture, and place plants using Blender.',
-        src: [require('./media/Plants_feature.png'), require('./media/Plants_clay.png')
+        src: [require('./media/Plants_feature.jpg'), require('./media/Plants_clay.jpg')
         ]
     },
     bulldozer: {
@@ -48,7 +48,7 @@ export const projects = {
     readingRoom: {
         title: "The Reading Room",
         text: 'A modern reading room created for a class project on interior environments. ',
-        src: [require('./media/reading_room.png')],
+        src: [require('./media/reading_room.jpg')],
     },
     revolver: {
         title: "VR Ready Rugged Revolver",
@@ -63,12 +63,12 @@ export const projects = {
     sniper: {
         title: "Transforming Sci-Fi FPS Sniper Rifle",
         text: 'A transforming Rifle to Sniper combo built for a first person shooter. The final model is only 8K tris and is highly optimized for a first person perspective, from texel density to exaggerated proportions.',
-        src: [require('./media/sniper.jpg'), require('./media/rifle_high.png'), require('./media/rifle-transform.gif'), require('./media/rifle_low.png'), "https://sketchfab.com/models/821c903965374b9bbda49a86b347debc/embed?" ],
+        src: [require('./media/sniper.jpg'), require('./media/rifle_high.jpg'), require('./media/rifle-transform.gif'), require('./media/rifle_low.png'), "https://sketchfab.com/models/821c903965374b9bbda49a86b347debc/embed?" ],
     },
     coffee: {
         title: "Coffee Time",
         text: 'A quick scene created for an exercise on cgcookie.com. I figured that any self-respecting CG artist living in or around Seattle should have at least one coffee scene in their portfolio. So here it is! ',
-        src: [require('./media/coffee.jpg'), require('./media/coffee_clay.png')],
+        src: [require('./media/coffee.jpg'), require('./media/coffee_clay.jpg')],
     },
     tanks: {
         title: 'Mini Tanks for a Mobile Game',
