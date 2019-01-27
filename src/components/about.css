@@ -1,3 +1,45 @@
+.quote {
+    grid-column-end: span 3;
+    grid-row-end: span 2;
+    display: flex;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    justify-content: center;
+    flex-flow: column nowrap;
+    width: 60%;
+    max-width: 600px;
+    position: relative;
+}
+.quote-text:before {
+    display: block;
+    position: absolute;
+    content: "\201C";
+    font-size: 80px;
+    left: -64px;
+    top: 45px;
+    color: darkslategrey;
+}
+.quote-text:after {
+    display: block;
+    position: absolute;
+    content: "\201D";
+    font-size: 80px;
+    text-align: right;
+    right: -64px;
+    bottom: 60px;
+    color: darkslategrey;
+}
+.quote-text {
+    margin: auto;
+    line-height: 150%;
+}
+.source {
+    text-align: right;
+    padding-top: 16px;
+}
 
 @media only screen and (min-width: 600px) {
     .about {

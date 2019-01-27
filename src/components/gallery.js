@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './gallery.css';
 import LazyLoad from 'react-lazy-load';
-import {About} from './about';
+import {About, Quote1, Quote2} from './about';
 
 export const projects = {
     plants: {
@@ -154,34 +154,38 @@ export class Gallery extends Component {
                 <ProjectImage class="large"src='feast'changeProject={this.changeProject} toggleModal={this.toggleModal}/>  
                 <ProjectImage src='vonnbots'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
 
+                <Quote1 />
+
                 <ProjectImage class="tall"src='dragon'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 <ProjectImage src='snowman'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <LazyLoad offset='1000'>
+                <LazyLoad offset='1000' debounce='false'>
                     <ProjectImage src='readingRoom'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 </LazyLoad>
                 <ProjectImage class='large' src='rocketLauncher'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
 
+                <Quote2 />
+
                 <ProjectImage class='large' src='mountain'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <LazyLoad offset='1000'>
+                <LazyLoad offset='1000'debounce='false'>
                     <ProjectImage src='revolver'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 </LazyLoad>
-                <LazyLoad offset='1000'>
+                <LazyLoad offset='1000'debounce='false'>
                     <ProjectImage src='sniper'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 </LazyLoad>
                 
-                <LazyLoad>
+                <LazyLoad offset='1000'debounce='false'>
                     <ProjectImage src='coffee'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 </LazyLoad>
                     <ProjectImage class='large' src='tanks'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <LazyLoad>
+                <LazyLoad offset='1000'debounce='false'>
                     <ProjectImage src='gyrocopter'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 </LazyLoad>
 
                 <ProjectImage class='large' src='templetonTonics'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <LazyLoad>
+                <LazyLoad offset='1000'debounce='false'>
                     <ProjectImage src='ax'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 </LazyLoad>
-                <LazyLoad>
+                <LazyLoad offset='1000'debounce='false'>
                     <ProjectImage src='freedom'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 </LazyLoad>
             </div>
