@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './gallery.css';
 import LazyLoad from 'react-lazy-load';
-import {About, Quote1, Quote2} from './about';
+import {About, Quote1, Quote2, Quote3, Quote4} from './about';
 
 export const projects = {
     plants: {
@@ -172,6 +172,8 @@ export class Gallery extends Component {
                 <LazyLoad offset='1000'debounce='false'>
                     <ProjectImage src='sniper'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 </LazyLoad>
+
+                <Quote3 />
                 
                 <LazyLoad offset='1000'debounce='false'>
                     <ProjectImage src='coffee'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 

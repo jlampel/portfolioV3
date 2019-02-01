@@ -39,6 +39,19 @@ export class Quote2 extends Component {
         return (
             <div class="quote">
                 <p class="quote-text">
+                Jonathan has a real knack for balancing the technical and artistic aspects of a project. His work always demonstrates a strong understanding of the real-world sources of his subject while taking enough artistic liberty to make the work compelling. Plus, he’s just a great dude to be around. 
+                </p>
+                <p class="source"><i>~ <a href="https://www.linkedin.com/in/jcwilliamson/">Jonathan Williamson</a>, cofounder of CG Cookie and the Blender Market</i></p>
+            </div>
+        );
+    }
+}
+
+export class Quote3 extends Component {
+    render() {
+        return (
+            <div class="quote">
+                <p class="quote-text">
                     Jonathan's seaplane and bird shots in my Pro Lighting Skies Trailer were easily the most difficult, but he crushed it! Really impressed :) 
                 </p>
                 <p class="source"><i>~ <a href="https://www.linkedin.com/in/andrew-price-17678911/">Andrew Price</a>, founder of Poliigon and Blender Guru</i></p>
@@ -47,7 +60,7 @@ export class Quote2 extends Component {
     }
 }
 
-export class Quote3 extends Component {
+export class Quote4 extends Component {
     render() {
         return (
             <div class="quote">
