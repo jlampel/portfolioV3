@@ -183,6 +183,8 @@ export class Gallery extends Component {
                     <ProjectImage src='gyrocopter'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 </LazyLoad>
 
+                <Quote4 />
+
                 <ProjectImage class='large' src='templetonTonics'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
                 <LazyLoad offset='1000'debounce='false'>
                     <ProjectImage src='ax'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
