@@ -67,7 +67,7 @@ export class Quote4 extends Component {
                 <p class="quote-text">
                     Every piece of work I've commissioned Jonathan to do has far exceeded my expectations. His creative approach and attention to detail is unmatched in my experience, and he's truly skilled at taking an abstract idea and making it a reality. 
                 </p>
-                <p class="source"><a href="https://www.instagram.com/templeton.tonics/">Chris Templeton</a>, founder of Templeton Tonics</p>
+                <p class="source"><i>~ <a href="https://www.instagram.com/templeton.tonics/">Chris Templeton</a>, founder of Templeton Tonics</i></p>
             </div>
         );
     }
