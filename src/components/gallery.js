@@ -58,7 +58,10 @@ export const projects = {
     rocketLauncher: {
         title: "Sci-Fi FPS Rocket Launcher",
         text: 'A beast of a rocket launcher built for a first person shooter. The final model is only 5.39K tris and is highly optimized for a first person perspective, from texel density to exaggerated proportions and functional reloading mechanisms. ',
-        src: [require('./media/rocket_launcher.jpg'), require('./media/rocket_banner.jpg'), require('./media/rocket.jpg'), require('./media/rocket_low.png')],
+        src: [
+                require('./media/rocket_launcher.jpg'), require('./media/rocket_banner.jpg'), require('./media/rocket.jpg'), require('./media/rocket_low.png'),
+                require('./media/sniper.jpg'), require('./media/rifle_high.jpg'), require('./media/rifle-transform.gif'), require('./media/rifle_low.png'), "https://sketchfab.com/models/821c903965374b9bbda49a86b347debc/embed?"
+        ],
     },
     sniper: {
         title: "Transforming Sci-Fi FPS Sniper Rifle",
@@ -105,6 +108,26 @@ export const projects = {
         text: 'A steampunk robot cutting his strings.',
         src: [require('./media/freedom.jpg'), require('./media/freedom_clay.jpg'), require('./media/crawling_out.jpg'),]
     },
+    stallout : {
+        title: 'Summer Stall Out',
+        text: 'A reflection on times of feeling stuck, inspired by the song Stall Out by Mutemath. All assets origionally from the Blender Market.',
+        src: [require('./media/stallout.jpg'), require('./media/stallout-clay.jpg')]
+    },
+    spaceman: {
+        title: 'Working from Home',
+        text: "It's great that we can all work together even though it often feels like we're on different planets. All assets origionally from the Blender Market.",
+        src: [require('./media/spaceman.jpg'), require('./media/spaceman-clay.jpg')]
+    },
+    pothead: {
+        title: 'Pothead',
+        text: "A CG Cookie origional caracter concepted by Tim von Reuden and brought to life in 3D by myself for a course on modeling and texturing.",
+        src: [require('./media/pothead.jpg'), require('./media/pothead-2.jpg'), require('./media/pothead-3.jpg')]
+    },
+    butterfly: {
+        title: 'Mechanical Butterfly',
+        text: "A beautiful contradiction.",
+        src: [require('./media/butterfly.jpg'), require('./media/butterfly-02.jpg'), require('./media/butterfly-03.jpg')]
+    },
 }
 
 class ProjectImage extends Component {
@@ -122,7 +145,7 @@ class ProjectImage extends Component {
     }
     render() {
         return (
-            <div onClick={this.openModal} class={this.props.class} id="imageContainer" > 
+            <div onClick={this.openModal} class={this.props.class} id="imageContainer" >
                     <img src={this.state.src} alt={this.state.content.title} class="image"/>
             </div>
         );
@@ -144,53 +167,53 @@ export class Gallery extends Component {
     render() {
         return (
             <div class="gallery">
-                <ProjectImage class="large" src='plants'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
-                <ProjectImage src='bulldozer'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <ProjectImage src='soldier'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage class="large" src='spaceman'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
+                <ProjectImage src='pothead'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
+                <ProjectImage src='plants'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
 
                 <About />
 
-                <ProjectImage src='cabin'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <ProjectImage class="large"src='feast'changeProject={this.changeProject} toggleModal={this.toggleModal}/>  
-                <ProjectImage src='vonnbots'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
+                <ProjectImage src='butterfly'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
+                <ProjectImage class="large"src='stallout'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
+                <ProjectImage src='cabin'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
 
                 <Quote1 />
 
-                <ProjectImage class="tall"src='dragon'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
-                <ProjectImage src='snowman'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage class="tall"src='dragon'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
+                <ProjectImage src='snowman'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
                 <LazyLoad offset='1000' debounce='false'>
-                    <ProjectImage src='readingRoom'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                    <ProjectImage src='readingRoom'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
                 </LazyLoad>
                 <ProjectImage class='large' src='rocketLauncher'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
 
                 <Quote2 />
 
-                <ProjectImage class='large' src='mountain'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage class='large' src='soldier'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
                 <LazyLoad offset='1000'debounce='false'>
-                    <ProjectImage src='revolver'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                    <ProjectImage src='revolver'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
                 </LazyLoad>
                 <LazyLoad offset='1000'debounce='false'>
-                    <ProjectImage src='sniper'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                    <ProjectImage src='mountain'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
                 </LazyLoad>
 
                 <Quote3 />
-                
+
                 <LazyLoad offset='1000'debounce='false'>
-                    <ProjectImage src='coffee'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                    <ProjectImage src='tanks'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
                 </LazyLoad>
-                    <ProjectImage class='large' src='tanks'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                    <ProjectImage class='large' src='coffee'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
                 <LazyLoad offset='1000'debounce='false'>
-                    <ProjectImage src='gyrocopter'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                    <ProjectImage src='gyrocopter'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
                 </LazyLoad>
 
                 <Quote4 />
 
-                <ProjectImage class='large' src='templetonTonics'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                <ProjectImage class='large' src='templetonTonics'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
                 <LazyLoad offset='1000'debounce='false'>
-                    <ProjectImage src='ax'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                    <ProjectImage src='ax'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
                 </LazyLoad>
                 <LazyLoad offset='1000'debounce='false'>
-                    <ProjectImage src='freedom'changeProject={this.changeProject} toggleModal={this.toggleModal}/> 
+                    <ProjectImage src='freedom'changeProject={this.changeProject} toggleModal={this.toggleModal}/>
                 </LazyLoad>
             </div>
         );
