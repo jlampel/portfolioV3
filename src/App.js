@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import './App.css';
 import { Header } from './components/header';
 import { Footer } from './components/footer';
@@ -34,13 +34,13 @@ class App extends Component {
         <div className="App" id='app'>
           <Header />
           <Modal id='modal'
-            activeProject={this.state.activeProject} 
+            activeProject={this.state.activeProject}
             toggleModal={this.toggleModal}
             changeProject={this.changeProject}
           />
-          <Gallery 
-            activeProject={this.state.activeProject} 
-            changeProject={this.changeProject} 
+          <Gallery
+            activeProject={this.state.activeProject}
+            changeProject={this.changeProject}
             toggleModal={this.toggleModal}
           />
           <Footer />
@@ -50,9 +50,9 @@ class App extends Component {
       return (
         <div className="App" id='app'>
           <Header />
-          <Gallery 
-            activeProject={this.state.activeProject} 
-            changeProject={this.changeProject} 
+          <Gallery
+            activeProject={this.state.activeProject}
+            changeProject={this.changeProject}
             toggleModal={this.toggleModal}
           />
           <Footer />
